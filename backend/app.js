@@ -11,12 +11,13 @@ connectDB();
 
 app.use(express.json());
 
-app.use("/api/auth", authRouter);
-
 app.get("/", (req, res) => {
   res.send("Hello!");
 });
 
+app.use("/api/auth", authRouter);
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
